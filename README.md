@@ -12,4 +12,4 @@
 6. Предложный
 
 # Пример запроса через postman
-              ![image](https://user-images.githubusercontent.com/84938597/198393810-8c1c17b3-790d-4cec-a256-8ee5cd76085f.png)
+![image](https://user-images.githubusercontent.com/84938597/198393810-8c1c17b3-790d-4cec-a256-8ee5cd76085f.png)
