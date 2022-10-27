@@ -18,8 +18,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 @AutoConfigureMockMvc
 class DeclinationApplicationTests {
 
-    private val base_uri = "http://localhost:8080/spell"
-    private val testWords = "[\"кот\",\"кота\",\"коту\",\"кота\",\"котом\",\"коте\"]"
+    private val baseUri = "http://localhost:8080/spell"
+    private val testWordsList = listOf("кот", "кота", "коту", "кота", "котом", "коте")
+    private val testWordsString = "[\"кот\",\"кота\",\"коту\",\"кота\",\"котом\",\"коте\"]"
 
 
     @Autowired
@@ -30,17 +31,12 @@ class DeclinationApplicationTests {
 
     @Test
     fun serviceTest() {
-        assertEquals(
-            wordDeclinationService.spell("кот"), listOf("кот", "кота", "коту", "кота", "котом", "коте")
-        )
+        assertEquals(wordDeclinationService.spell("кот"), testWordsList)
     }
 
     @Test
     fun restApiTest() {
-        mockMvc.perform(get("$base_uri/кот"))
-            .andExpect(content().string(containsString("[\"кот\",\"кота\",\"коту\",\"кота\",\"котом\",\"коте\"]")))//).co.andExpect { listOf("кот", "кота", "коту", "кота", "котом", "коте") }
+        mockMvc.perform(get("$baseUri/кот")).andExpect(content().string(containsString(testWordsString)))
     }
-
-
 }
 
