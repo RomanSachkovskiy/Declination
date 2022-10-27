@@ -1,9 +1,6 @@
 package com.example.Declination.service
 
-import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
-import ru.morpher.ws3.Client
-import ru.morpher.ws3.russian.DeclensionResult
 import com.github.demidko.aot.WordformMeaning.lookupForMeanings
 
 
@@ -11,7 +8,6 @@ import com.github.demidko.aot.WordformMeaning.lookupForMeanings
 class WordDeclinationServiceImpl : WordDeclinationService {
 
     override fun spell(word: String): List<String> {
-//        val russianDeclensionResult: DeclensionResult = client.russian().declension(word)
         val wordCase = lookupForMeanings(word);
 
         return listOf(

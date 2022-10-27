@@ -32,7 +32,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("ru.morpher:ws3.client:1.0-SNAPSHOT")
 	implementation("com.github.demidko:aot:2021.09.19")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.junit.platform:junit-platform-runner")
